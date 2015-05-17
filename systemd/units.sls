@@ -8,11 +8,11 @@
     - context:
         config: {{ unitconfig }}
     - watch_in:
-      - cmd: reload_systemd_configuration
+      - cmd: reload_systemd_configuration_{{ unit }}
 
-{% endfor %}
-{% endfor %}
-
-reload_systemd_configuration:
+reload_systemd_configuration_{{ unit }}:
   cmd.wait:
-    - name: systemctl reload
+    - name: systemctl reload {{ unit }}
+{% endfor %}
+{% endfor %}
+
