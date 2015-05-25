@@ -10,6 +10,11 @@
     - watch_in:
       - cmd: reload_systemd_configuration
 
+enable_{{ unit }}_{{ unittype }}:
+  cmd.wait:
+    - name: systemctl enable {{ unit }}
+    - watch:
+      - cmd: reload_systemd_configuration
 {% endfor %}
 {% endfor %}
 
