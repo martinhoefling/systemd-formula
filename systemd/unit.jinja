@@ -1,6 +1,12 @@
 {% for section, sectioncontent in config.iteritems() -%}
 [{{ section }}]
 {% for key, value in sectioncontent.iteritems() -%}
+{%- if value is list %}
+  {%- for subvalue in value %}
+{{ key }}={{ subvalue }}
+  {%- endfor %}
+{%- else %}
 {{ key }}={{ value }}
+{%- endif %}
 {% endfor %}
 {% endfor %}
