@@ -1,5 +1,5 @@
-{% for unittype, units in salt['pillar.get']('systemd', {}).iteritems()  %}
-{% for unit, unitconfig in units.iteritems() %}
+{% for unittype, units in salt['pillar.get']('systemd', {}).items()  %}
+{% for unit, unitconfig in units.items() %}
 
 /etc/systemd/system/{{ unit }}.{{ unittype }}:
   file.managed:
