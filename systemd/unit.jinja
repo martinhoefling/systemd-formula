@@ -1,6 +1,6 @@
-{% for section, sectioncontent in config.iteritems() -%}
+{% for section, sectioncontent in config.items() -%}
 [{{ section }}]
-{% for key, value in sectioncontent.iteritems() -%}
+{% for key, value in sectioncontent.items() -%}
 {%- if value is list %}
   {%- for subvalue in value %}
 {{ key }}={{ subvalue }}
