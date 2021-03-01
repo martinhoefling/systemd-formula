@@ -13,3 +13,13 @@ systemd:
 
       Install:
         WantedBy: multi-user.target
+
+systemd-networkd:
+  network:
+    00-static:
+      Match:
+        MACAddress: "00:00:00:00:00:00"
+
+      Network:
+        Address: "10.0.0.4/24"
+        Gateway: "10.0.0.1"
