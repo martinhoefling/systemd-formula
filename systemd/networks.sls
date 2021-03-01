@@ -1,4 +1,4 @@
-{% for unittype, units in salt['pillar.get']('networkd', {}).items()  %}
+{% for unittype, units in salt['pillar.get']('systemd-networkd', {}).items()  %}
 {% for unit, unitconfig in units.items() %}
 
 /etc/systemd/network/{{ unit }}.{{ unittype }}:

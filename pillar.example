@@ -14,6 +14,7 @@ systemd:
       Install:
         WantedBy: multi-user.target
 
+systemd-networkd:
   network:
     00-static:
       Match:
